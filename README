@@ -1,0 +1,1 @@
+#docker run -d -p 8080:8080 -v /Users/a912158001/images:/images -v /Users/a912158001/model:/model

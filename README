@@ -26,3 +26,6 @@ Finally,the data will be also stored in cassandra:
 use mykeyspace;
 Select * from mytable ;
 
+See the video of the app on https://github.com/zjr200020300/dockerapp/blob/master/ana_app.mp4
+or 
+link:https://pan.baidu.com/s/1AQV9kjqxFrUkXREnOZ65Mw  password:bkx6

@@ -1,1 +1,10 @@
-#docker run -d -p 8080:8080 -v /Users/a912158001/images:/images -v /Users/a912158001/model:/model
+These codes implement the basic functionality of mnist in docker. After submitting a picture with 28*28 through curl or browser, tensorflow will recognize and return the recognition result on http://127.0.0.1:8081/file/<file_routine>.
+
+The entire project is built on top of Python, using the flask for routing and storing it in a container for easy implementation. The stored model uses a convolutional neural network to implement mnist. 
+
+The following are specific methods of use.
+
+First use docker to download cassandra's image, then run docker build.
+Require 
+
+run by#docker run -d -p 8080:8080 -v /Users/a912158001/images:/images -v /Users/a912158001/model:/model

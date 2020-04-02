@@ -2,9 +2,27 @@ These codes implement the basic functionality of mnist in docker. After submitti
 
 The entire project is built on top of Python, using the flask for routing and storing it in a container for easy implementation. The stored model uses a convolutional neural network to implement mnist. 
 
-The following are specific methods of use.
-
-First use docker to download cassandra's image, then run docker build.
 Require 
+tensorflow 2.0.0
+flask 1.1.1
+cassandra-driver 3.22.0
+Pillow 7.0.0
+The following are specific method of use.
 
-run by#docker run -d -p 8080:8080 -v /Users/a912158001/images:/images -v /Users/a912158001/model:/model
+First, use docker to download cassandra's image.
+ docker start zhang-cassandra
+ docker run -it --network zhang-network --rm cassandra cqlsh zhang-cassandra
+ use mykeyspace;
+ Select * from mytable ;
+
+
+Second, run ana-app by:
+docker run -d -p 8081:8080 -v /Users/a912158001/images:/images -v /Users/a912158001/model:/model ana-app:1.0
+then you could use the following link to use the app.
+http://127.0.0.1:8081/file/<file_routine>
+
+
+Finally,the data will be also stored in cassandra:
+use mykeyspace;
+Select * from mytable ;
+
